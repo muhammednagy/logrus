@@ -116,3 +116,17 @@ func NewHook(options Options, levels ...logrus.Level) (*Hook, error) {
 
 	return &hook, nil
 }
+
+func NewHookWithClient(client *sentry.Client, levels ...logrus.Level) (*Hook, error) {
+	hook := Hook{
+		client:       client,
+		levels:       levels,
+		tags:         map[string]string{},
+		flushTimeout: 10 * time.Second,
+	}
+	if len(hook.levels) == 0 {
+		hook.levels = logrus.AllLevels
+	}
+
+	return &hook, nil
+}

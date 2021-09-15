@@ -8,8 +8,8 @@ package main
 import (
     "fmt"
 
-    "github.com/onrik/logrus/filename"
-    "github.com/onrik/logrus/sentry"
+    "github.com/muhammednagy/logrus/filename"
+    "github.com/muhammednagy/logrus/sentry"
     log "github.com/sirupsen/logrus"
 )
 
